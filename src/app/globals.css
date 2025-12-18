@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #070606;
+  --panel: #0f0b08;
+  --panel2: #15100c;
+  --text: #f5f1ea;
+  --muted: #cbbfae;
+  --gold1: #f7d88a;
+  --gold2: #d6a84f;
+  --gold3: #8b5e12;
+  --ok: #2de37d;
+  --danger: #ff4d4d;
+}
+
+body {
+  color: var(--text);
+  background: var(--bg);
+  /* Deep leather black/brown texture feel using CSS layered gradients */
+  background-image: 
+    radial-gradient(circle at 50% 0%, #1a120b, transparent 60%),
+    linear-gradient(to bottom, #070606, #0f0b08);
+  min-height: 100vh;
+}
