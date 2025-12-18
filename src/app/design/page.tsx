@@ -6,6 +6,7 @@ import { GoldButton } from "@/components/GoldButton";
 import { Card } from "@/components/Card";
 import { Toast } from "@/components/Toast";
 import { Upload, Calendar, Palette, Layers, Image as ImageIcon, FileArchive, CheckCircle2 } from "lucide-react";
+import Image from "next/image";
 
 export default function DesignPage() {
     const [formData, setFormData] = useState({
@@ -95,32 +96,35 @@ export default function DesignPage() {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-32 max-w-7xl mx-auto">
                     {galleryItems.map((item) => (
                         <div key={item.id} className="group relative aspect-[3/4] rounded-xl overflow-hidden border border-white/5 hover:border-gold2/50 transition-all duration-500 bg-panel2">
-                            {/* Premium Placeholder Content */}
-                            <div className={`absolute inset-0 ${item.color} opacity-20 group-hover:opacity-30 transition-opacity`} />
+                            {/* Image Background */}
+                            <Image
+                                src={`/images/design/design-${(item.id % 3) + 1}.png`}
+                                alt={item.title}
+                                fill
+                                className="object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
+                            />
+
+                            {/* Overlay Gradient */}
+                            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent opacity-90 group-hover:opacity-70 transition-opacity duration-300" />
 
                             {/* Decorative Elements */}
-                            <div className="absolute inset-4 border border-white/5 rounded-lg flex flex-col justify-between p-4">
+                            <div className="absolute inset-4 border border-white/5 rounded-lg flex flex-col justify-between p-4 z-10">
                                 <div className="flex justify-between items-start">
                                     <div className="w-8 h-8 rounded-full bg-black/40 backdrop-blur-sm flex items-center justify-center border border-white/10">
                                         <Layers className="w-4 h-4 text-white/50" />
                                     </div>
-                                    <span className="text-[10px] uppercase tracking-wider font-semibold text-gold1 bg-black/60 px-2 py-1 rounded backdrop-blur-md">
+                                    <span className="text-[10px] uppercase tracking-wider font-semibold text-gold1 bg-black/80 px-2 py-1 rounded backdrop-blur-md border border-gold1/20">
                                         {item.type}
                                     </span>
                                 </div>
-                                <div className="space-y-2">
-                                    <div className="w-full h-1/2 bg-gradient-to-tr from-white/5 to-transparent rounded opacity-50" />
-                                    <div className="w-2/3 h-2 bg-white/10 rounded" />
-                                    <div className="w-1/2 h-2 bg-white/5 rounded" />
-                                </div>
                             </div>
 
-                            {/* Hover Overlay */}
-                            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-                                <h3 className="text-white font-bold text-lg transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                            {/* Hover Content */}
+                            <div className="absolute inset-0 flex flex-col justify-end p-6 z-20">
+                                <h3 className="text-white font-bold text-lg transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300 drop-shadow-md">
                                     {item.title}
                                 </h3>
-                                <p className="text-muted text-sm mt-1 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">
+                                <p className="text-gray-300 text-sm mt-1 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300 delay-75 opacity-0 group-hover:opacity-100">
                                     Premium Quality Output
                                 </p>
                             </div>

@@ -96,6 +96,9 @@ export function Navbar() {
                     <Link href="/portfolio" className="text-sm uppercase tracking-wide hover:text-gold1 transition-colors">
                         Portfolio
                     </Link>
+                    <Link href="/design" className="text-sm uppercase tracking-wide hover:text-gold1 transition-colors">
+                        Design Work
+                    </Link>
                     <Link href="/about" className="text-sm uppercase tracking-wide hover:text-gold1 transition-colors">
                         About
                     </Link>
