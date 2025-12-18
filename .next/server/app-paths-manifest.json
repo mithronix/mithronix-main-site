@@ -1,17 +1,6 @@
 {
-  "/about/page": "app/about/page.js",
-  "/api/contact/route": "app/api/contact/route.js",
-  "/contact/page": "app/contact/page.js",
-  "/_not-found/page": "app/_not-found/page.js",
-  "/legal/terms/page": "app/legal/terms/page.js",
   "/page": "app/page.js",
-  "/portfolio/page": "app/portfolio/page.js",
   "/pricing/page": "app/pricing/page.js",
-  "/products/seps/page": "app/products/seps/page.js",
-  "/products/page": "app/products/page.js",
-  "/legal/privacy/page": "app/legal/privacy/page.js",
-  "/coming-soon/page": "app/coming-soon/page.js",
-  "/products/erp/page": "app/products/erp/page.js",
-  "/products/techpack/page": "app/products/techpack/page.js",
-  "/products/smart-save/page": "app/products/smart-save/page.js"
+  "/about/page": "app/about/page.js",
+  "/products/page": "app/products/page.js"
 }
