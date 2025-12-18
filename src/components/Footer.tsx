@@ -7,14 +7,10 @@ export function Footer() {
             <div className="container mx-auto px-6">
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
 
-                    {/* Brand */}
                     <div className="space-y-6">
                         <Link href="/" className="flex items-center gap-2">
-                            <div className="w-6 h-6 rounded-sm bg-gradient-to-br from-gold2 to-gold3 flex items-center justify-center text-black font-black text-xs">
-                                M
-                            </div>
                             <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gold1 via-white to-gold1">
-                                Mithronix
+                                Mithronix™
                             </span>
                         </Link>
                         <p className="text-muted text-sm leading-relaxed">
@@ -55,9 +51,20 @@ export function Footer() {
                     <div>
                         <h4 className="text-white font-semibold mb-6 uppercase text-sm tracking-wider">Start Building</h4>
                         <p className="text-sm text-muted mb-4">Ready to automate your workflow?</p>
-                        <Link href="/contact" className="text-gold1 hover:text-white text-sm font-medium transition-colors flex items-center gap-1">
+                        <Link href="/contact" className="text-gold1 hover:text-white text-sm font-medium transition-colors flex items-center gap-1 mb-6">
                             Get in Touch &rarr;
                         </Link>
+
+                        <div className="space-y-2 mb-8">
+                            <p className="text-xs text-muted">
+                                <span className="block text-white mb-1 opacity-50 uppercase tracking-wider text-[10px]">Email Us</span>
+                                mithronix.ai@gmail.com
+                            </p>
+                            <p className="text-xs text-muted">
+                                <span className="block text-white mb-1 opacity-50 uppercase tracking-wider text-[10px]">WhatsApp / Phone</span>
+                                +91 7358838198
+                            </p>
+                        </div>
 
                         <h4 className="text-white font-semibold mt-8 mb-4 uppercase text-xs tracking-wider opacity-70">Legal</h4>
                         <ul className="space-y-2 text-xs text-muted">

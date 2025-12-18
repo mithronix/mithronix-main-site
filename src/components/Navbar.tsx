@@ -41,11 +41,8 @@ export function Navbar() {
             <div className="container mx-auto px-6 flex items-center justify-between">
                 {/* Logo */}
                 <Link href="/" className="text-2xl font-bold tracking-tighter text-white flex items-center gap-2">
-                    <div className="w-8 h-8 rounded-sm bg-gradient-to-br from-gold2 to-gold3 flex items-center justify-center text-black font-black text-sm">
-                        M
-                    </div>
-                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-gold1 via-white to-gold1">
-                        Mithronix
+                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-gold1 via-white to-gold1 pb-1">
+                        Mithronix™
                     </span>
                 </Link>
 

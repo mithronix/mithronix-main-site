@@ -9,9 +9,10 @@ interface Props {
     features: string[];
     workflow: { title: string; desc: string }[];
     bestFor: string[];
+    children?: React.ReactNode;
 }
 
-export function ProductPageLayout({ title, desc, features, workflow, bestFor }: Props) {
+export function ProductPageLayout({ title, desc, features, workflow, bestFor, children }: Props) {
     return (
         <main className="min-h-screen pt-32 pb-20 px-6">
             <div className="container mx-auto">
@@ -60,6 +61,13 @@ export function ProductPageLayout({ title, desc, features, workflow, bestFor }: 
                         </div>
                     </div>
                 </div>
+
+                {/* Custom Content (e.g. Credit Logic) */}
+                {children && (
+                    <div className="mb-24">
+                        {children}
+                    </div>
+                )}
 
                 {/* Workflow */}
                 <div className="mb-24">

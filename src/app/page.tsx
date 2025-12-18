@@ -79,7 +79,7 @@ export default function Home() {
             <section className="border-y border-white/5 bg-panel/30 backdrop-blur-sm py-8">
                 <div className="container mx-auto px-6">
                     <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-                        <TrustItem text="22+ Years Industry Experience" />
+                        <TrustItem text="25+ Years Industry Experience" />
                         <TrustItem text="Production-Ready Outputs" />
                         <TrustItem text="Automation First" />
                         <TrustItem text="Global Quality Standard" />

@@ -23,17 +23,34 @@ export default function ContactPage() {
         product: "Smart Save",
         message: ""
     });
-    const [submitted, setSubmitted] = useState(false);
-    const [messages, setMessages] = useState<ContactMessage[]>([]); // To store messages as requested
+    const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+    const [toastMessage, setToastMessage] = useState("");
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        // Add to local state
-        setMessages([...messages, formData]);
-        // Show toast
-        setSubmitted(true);
-        // Reset form
-        setFormData({ ...formData, message: "", name: "", email: "", company: "" });
+        setStatus("sending");
+
+        try {
+            const res = await fetch('/api/contact', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData),
+            });
+
+            const data = await res.json();
+
+            if (res.ok) {
+                setStatus("success");
+                setToastMessage("Message sent successfully. We'll be in touch!");
+                setFormData({ ...formData, message: "", name: "", email: "", company: "" });
+            } else {
+                throw new Error(data.error || "Failed to send");
+            }
+        } catch (error) {
+            console.error(error);
+            setStatus("error");
+            setToastMessage("Failed to send. Please email us directly: mithronix.ai@gmail.com");
+        }
     };
 
     return (
@@ -104,7 +121,9 @@ export default function ContactPage() {
                                     placeholder="Tell us about your needs..."
                                 />
                             </div>
-                            <GoldButton type="submit" className="w-full">Send Message</GoldButton>
+                            <GoldButton type="submit" className="w-full" disabled={status === "sending"}>
+                                {status === "sending" ? "Sending..." : "Send Message"}
+                            </GoldButton>
                         </form>
                     </Card>
 
@@ -119,8 +138,7 @@ export default function ContactPage() {
                                     </div>
                                     <div>
                                         <h4 className="text-white font-medium">Email Us</h4>
-                                        <p className="text-muted text-sm mt-1">support@mithronix.com</p>
-                                        <p className="text-muted text-sm">sales@mithronix.com</p>
+                                        <p className="text-muted text-sm mt-1">mithronix.ai@gmail.com</p>
                                     </div>
                                 </div>
                                 <div className="flex items-start gap-4">
@@ -129,8 +147,8 @@ export default function ContactPage() {
                                     </div>
                                     <div>
                                         <h4 className="text-white font-medium">WhatsApp / Phone</h4>
-                                        <p className="text-muted text-sm mt-1">+1 (555) 123-4567</p>
-                                        <p className="text-xs text-gray-500 mt-1">Available Mon-Fri, 9am - 6pm EST</p>
+                                        <p className="text-muted text-sm mt-1">+91 7358838198</p>
+                                        <p className="text-xs text-gray-500 mt-1">Available Mon-Fri, 9am - 6pm</p>
                                     </div>
                                 </div>
                             </div>
@@ -141,16 +159,16 @@ export default function ContactPage() {
                             <p className="text-muted text-sm mb-6 leading-relaxed">
                                 For large-scale factory deployments or custom API integrations, please contact our enterprise solutions team directly.
                             </p>
-                            <p className="text-gold1 font-bold">enterprise@mithronix.com</p>
+                            <p className="text-gold1 font-bold">mithronix.ai@gmail.com</p>
                         </div>
                     </div>
                 </div>
             </div>
 
             <Toast
-                message="Message received. We’ll contact you soon."
-                isVisible={submitted}
-                onClose={() => setSubmitted(false)}
+                message={toastMessage}
+                isVisible={status === "success" || status === "error"}
+                onClose={() => setStatus("idle")}
             />
         </main>
     );
