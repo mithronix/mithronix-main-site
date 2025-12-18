@@ -138,6 +138,7 @@ export function Navbar() {
                 </div>
                 <Link href="/pricing" className="text-xl font-medium text-white border-b border-white/10 pb-4">Pricing</Link>
                 <Link href="/portfolio" className="text-xl font-medium text-white border-b border-white/10 pb-4">Portfolio</Link>
+                <Link href="/design" className="text-xl font-medium text-white border-b border-white/10 pb-4">Design Work</Link>
                 <Link href="/about" className="text-xl font-medium text-white border-b border-white/10 pb-4">About</Link>
                 <Link href="/contact" className="mt-4">
                     <GoldButton className="w-full justify-center">Contact Us</GoldButton>
