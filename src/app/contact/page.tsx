@@ -101,13 +101,13 @@ export default function ContactPage() {
                                 <select
                                     value={formData.product}
                                     onChange={(e) => setFormData({ ...formData, product: e.target.value })}
-                                    className="w-full bg-black/30 border border-white/10 rounded p-3 text-white focus:border-gold2 focus:outline-none transition-colors"
+                                    className="w-full bg-black/30 border border-white/10 rounded p-3 text-white focus:border-gold2 focus:outline-none transition-colors appearance-none"
                                 >
-                                    <option>Smart Save</option>
-                                    <option>Mithronix Seps</option>
-                                    <option>TechPack Builder</option>
-                                    <option>Garment ERP</option>
-                                    <option>Other / General Inquiry</option>
+                                    <option className="bg-black text-white">Smart Save</option>
+                                    <option className="bg-black text-white">Mithronix Seps</option>
+                                    <option className="bg-black text-white">TechPack Builder</option>
+                                    <option className="bg-black text-white">Garment ERP</option>
+                                    <option className="bg-black text-white">Other / General Inquiry</option>
                                 </select>
                             </div>
                             <div>
