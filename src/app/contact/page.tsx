@@ -46,10 +46,10 @@ export default function ContactPage() {
             } else {
                 throw new Error(data.error || "Failed to send");
             }
-        } catch (error) {
+        } catch (error: any) {
             console.error(error);
             setStatus("error");
-            setToastMessage("Failed to send. Please email us directly: mithronix.ai@gmail.com");
+            setToastMessage(error.message || "Failed to send. Please email us directly: mithronix.ai@gmail.com");
         }
     };
 
