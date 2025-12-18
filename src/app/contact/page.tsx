@@ -167,6 +167,7 @@ export default function ContactPage() {
 
             <Toast
                 message={toastMessage}
+                type={status === "error" ? "error" : "success"}
                 isVisible={status === "success" || status === "error"}
                 onClose={() => setStatus("idle")}
             />
