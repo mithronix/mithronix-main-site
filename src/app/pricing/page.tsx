@@ -20,19 +20,19 @@ const PRICING_DATA = {
                 name: "Starter",
                 priceMonthly: "29",
                 priceAnnual: "23",
-                features: ["CorelDRAW + Photoshop", "5 GB Storage", "Email Support", "1 User"]
+                features: ["Local Smart Save System", "CorelDRAW + Photoshop Auto", "Google Drive / OneDrive Compat.", "Works Fully Offline", "Email Support", "1 User"]
             },
             {
                 name: "Pro",
                 priceMonthly: "79",
                 priceAnnual: "63",
-                features: ["Advanced Automation", "50 GB Storage", "Priority Support", "3 Users"]
+                features: ["Advanced Automation Workflows", "User's Cloud Sync Compatible", "Drive/OneDrive Version History", "Priority Support", "3 Users"]
             },
             {
                 name: "Studio",
                 priceMonthly: "199",
                 priceAnnual: "159",
-                features: ["Unlimited Storage", "Dedicated Manager", "API Access", "10 Users"]
+                features: ["Team-Ready Workflow System", "External Cloud Sync Support", "Multi-Designer Environment", "API Access", "Dedicated Manager", "10 Users"]
             }
         ]
     },
@@ -190,6 +190,16 @@ export default function PricingPage() {
                             highlighted={index === 1} // Highlight Pro tier
                         />
                     ))}
+                </div>
+
+                {/* Cloud Storage Disclaimer */}
+                <div className="max-w-3xl mx-auto text-center mb-20 animate-fade-in-up delay-100">
+                    <p className="text-sm font-medium text-gold1 mb-2">LOCAL-FIRST  •  CLOUD-COMPATIBLE  •  SECURE</p>
+                    <p className="text-muted leading-relaxed px-6">
+                        “Mithronix does not store or host your files.
+                        All designs remain on your computer or your own cloud storage.
+                        This ensures full data ownership, privacy, and offline reliability.”
+                    </p>
                 </div>
 
                 {/* Module Pricing Summary Table */}

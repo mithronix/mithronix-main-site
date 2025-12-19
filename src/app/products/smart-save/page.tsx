@@ -17,7 +17,7 @@ export default function SmartSavePage() {
                     "Photoshop Smart Save Integration",
                     "Integrated Billing & Invoice Dashboard",
                     "One-Click Proof Generation",
-                    "Secure Cloud Sync & Versioning",
+                    "Secure Cloud Sync & Versioning (via GDrive/OneDrive)",
                     "Smart Design Metadata System"
                 ]}
                 workflow={[
